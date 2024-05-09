@@ -1,0 +1,40 @@
+<suite name="myTestSuiteLogin" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="utilities.ExtentReportUtility" />
+	</listeners>
+	<test name="chromeTest">
+		<parameter name="browser" value="chrome"></parameter>
+		<groups>
+			<run>
+				<include name="critical"></include>
+				<include name="medium"></include>
+				<include name="low"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="testcases.LoginTestCases"> </class>
+			<class name="testcases.WorkersPageTestcases"> </class>
+			<class name="testcases.ClientPageTestCases"></class>
+			<class name="testcases.CreateWorkerSubPageTestCases"></class>
+		</classes>
+	</test>
+	<listeners>
+		<listener class-name="utilities.ExtentReportUtility" /> 
+	</listeners>
+	<test name="firefoxTest">
+		<parameter name="browser" value="firefox"></parameter>
+		<groups>
+			<run>
+				<include name="critical"></include>
+				<include name="medium"></include>
+				<include name="low"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="testcases.LoginTestCases"> </class>
+			<class name="testcases.WorkersPageTestcases"> </class>
+			<class name="testcases.ClientPageTestCases"></class>
+			<class name="testcases.CreateWorkerSubPageTestCases"></class>
+		</classes>
+	</test>
+</suite>
